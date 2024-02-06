@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <script>
+        var isDisplay = true;
+
+        function hideElement() {
+            if (isDisplay == true) {
+                isDisplay = false;
+                document.getElementById("h2Basic").style.display = "none";
+            }
+            else {
+                isDisplay = true;
+                document.getElementById("h2Basic").style.display = "block";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="h1Basic" onclick="hideElement()">Basic htlm</h1>
+    <h2 id="h2Basic">h2 element</h2>
+</body>
+
+</html>

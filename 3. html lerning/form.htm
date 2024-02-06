@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Admission Form</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Admission Form</h2>
+        <form action="submit.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="course">Select Course:</label>
+            <select id="course" name="course">
+                <option value="computer_science">Computer Science</option>
+                <option value="engineering">Engineering</option>
+                <option value="business">Business</option>
+                <option value="other">Other</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
