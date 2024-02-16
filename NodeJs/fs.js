@@ -79,6 +79,16 @@ const { add, product} = require("./basic.js");
 // });
 
 
+/* ======= File Rename Method ======= */
+
+// fs.rename('first.c','hello2.c',(err)=>{
+//     if (err)
+//        console.log("Failed To Rename File");
+//     else
+//        console.log("Successfully Renamed File");
+// });
+
+
 // -------------->>>>>>>>>>>>>>  CLOSE method  <<<<<<<<<<<<<<<<---------------------
 
 fs.close
