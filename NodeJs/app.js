@@ -48,7 +48,7 @@ app.on('request',(req,res) => {
         res.end();
     }
     else if (items[1]=== 'user') {
-        res.setHeader('Content-type','text-html');
+        res.setHeader('Content-type','text/html');
         res.write('<h3 style="color:green"> Welcome to user page </h3>');
         res.end();
     }
