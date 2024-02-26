@@ -17,6 +17,14 @@ let myFun = (req, res, next) => {
  app.use(express.json());    // built-in
  app.use(morgan('dev'));
 
-//  app.get('/', (req, res, next)=> {
-//     res.
-//  });
+ app.get('/', (req, res, next)=> {
+    res.send('Welcome to express js');
+ });
+ 
+ app.post('/',(req, res, next)=> {
+    res.send('post method');
+ })
+
+ app.listen(port, () => {
+   console.log('server start at http://localhost:7070');
+ })
