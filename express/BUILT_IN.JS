@@ -4,23 +4,23 @@ const port  = 7000;
 const path = require('path');
 const morgan = require('morgan');
 
-let myFun = (req, res, next) => {
-    if((req.query.age) >=18){
-        next();
-     }
-     else{
-        res.send('you are not 18 years old');
-     }
-}
+// let myFun = (req, res, next) => {
+//     if((req.query.age) >=18){
+//         next();
+//      }
+//      else{
+//         res.send('you are not 18 years old');
+//      }
+// }
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/hello',express.static(path.join(__dirname, 'express', 'abc.txt')))
+app.use('/hello',express.static(path.join(__dirname, 'express', 'abc.txt')));
 app.use(morgan('dev'));
 
-app.get ('/',myFun,(req, res) => {
-    res.send('welcome to the express js');
-});
+// app.get ('/',myFun,(req, res) => {
+//     res.send('welcome to the express js');
+// });
 
 app.post('/',(req, res) => {
     console.log(req.body);
