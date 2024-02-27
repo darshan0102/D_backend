@@ -15,12 +15,16 @@ const morgan = require('morgan');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/hello',express.static(path.join(__dirname, 'express', 'abc.txt')));
+app.use('/hello',express.static(path.join(__dirname, '../express/abc.txt')));
 app.use(morgan('dev'));
 
-// app.get ('/',myFun,(req, res) => {
+// app.get ('/',(req, res) => {
 //     res.send('welcome to the express js');
 // });
+
+// app.get ('/',(req, res) => {
+//         res.sendFIle('welcome to the express js');
+//     });
 
 app.post('/',(req, res) => {
     console.log(req.body);
