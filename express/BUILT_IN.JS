@@ -14,10 +14,17 @@ let myFun = (req, res, next) => {
 }
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use('/hello',express.static(path.join(__dirname, 'express', 'abc.txt')))
 app.use(morgan('dev'));
 
 app.get ('/',myFun,(req, res) => {
     res.send('welcome to the express js');
+});
+
+app.post('/',(req, res) => {
+    console.log(req.body);
+    res.send('Post method')
 });
 
 app.listen(port,() => {
