@@ -15,7 +15,7 @@ const morgan = require('morgan');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/hello',express.static(path.join(__dirname, '../express/abc.txt')));
+app.use('/hello',express.static(path.join(__dirname, '..//express/abc.txt')));
 app.use(morgan('dev'));
 
 // app.get ('/',(req, res) => {
