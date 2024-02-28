@@ -31,7 +31,6 @@ app.get('/products/single-product', (req, res) => {
     res.status(201).json(product);
 });
 
-
 app.listen(port, () => {
     console.log(`server atart at http://localhost:7070`);
 })
