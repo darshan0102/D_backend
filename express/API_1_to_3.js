@@ -19,7 +19,6 @@ app.post('/products', (req, res) => {
     res.status(201).json({message: 'product is added.....'})
 });
 
-
 app.get('/products', (req, res) => {
     res.status(201).json(products);
 });
