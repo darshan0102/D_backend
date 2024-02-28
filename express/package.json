@@ -4,8 +4,8 @@
   "description": "",
   "main": "server2.js",
   "scripts": {
-    "start": "node BUILT_IN.JS",
-    "dev": "nodemon BUILT_IN.JS"
+    "start": "API_1_to_3.js",
+    "dev": "nodemon API_1_to_3.js"
   },
   "keywords": [],
   "author": "",
