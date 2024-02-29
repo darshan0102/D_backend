@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 
 app.post('/products', (req, res) => {
     // console.log(req.body);
-    const products = req.body.body;
+    const product = req.body;
     products.push(product);
     // products.push({...req.body});
     res.status(201).json({message: 'product is added.....'})
@@ -27,9 +27,10 @@ app.get('/products/single-product', (req, res) => {
     const id = +req.params.id;
     // console.log(id);
     let product = products.find((item)=> item.id === id)
-    res.status(201).json(product);
+    res.status(200).json(product);
 });
 
 app.listen(port, () => {
     console.log(`server atart at http://localhost:7070`);
 })
+ 
