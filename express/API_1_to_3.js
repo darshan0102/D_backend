@@ -33,4 +33,3 @@ app.get('/products/single-product', (req, res) => {
 app.listen(port, () => {
     console.log(`server atart at http://localhost:7070`);
 })
- 
