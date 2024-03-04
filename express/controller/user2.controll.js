@@ -1,24 +1,22 @@
-const mongoose = require('mongoose');
+const mongoose = require('../model/user2.model');
 
-const userSchema = mongoose.schema({
-    firstName: string,   // shortb form
-    lastName: {
-        type: string
-    },
-    gender: {
-        type: string,
-        enum: ['male', 'female']
-    },
-    email:{
-        type: string
-    },
-    password: {
-        type: string
-    },
-    age: {
-        type: number
-    },
-});
+exports.addUser = async (req, res) => {
+    try {
+        const {firstName, lastName, gender, email, password, age} = req.body;
+        console.log(req.body);
+        let newUser = await UserActivation.create({
+            firstName,
+            lastName,
+            email,
+            password,
+            age,
+            gender
+        });
 
-
-module.exports = mongoose.model('User',userSchema);
+        newUser.save();
+        res.status(201).json({user: newUser, message: 'New User is added'});
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message: 'internal Server Error'});
+    }
+}
