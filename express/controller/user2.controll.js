@@ -1,22 +1,21 @@
-const mongoose = require('../model/user2.model');
+const User = require('../model/user2.model');
 
-exports.addUser = async (req, res) => {
-    try {
+exports.addUser = async (req,res) => {
+    try{
         const {firstName, lastName, gender, email, password, age} = req.body;
         console.log(req.body);
-        let newUser = await UserActivation.create({
+        let newUser = await User.create({
             firstName,
             lastName,
+            gender,
             email,
             password,
-            age,
-            gender
+            age
         });
-
         newUser.save();
-        res.status(201).json({user: newUser, message: 'New User is added'});
-    } catch(error){
-        console.log(error);
-        res.status(500).json({message: 'internal Server Error'});
+        res.status(201).json({user : newUser, message : 'New User Is Added...'});
+    }catch(err){
+        console.log(err);
+        res.status(500).json({message : 'Internal Server Error...'});
     }
 }
