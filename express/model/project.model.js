@@ -10,9 +10,9 @@ const ProjectSchema = mongoose.Schema({
     Price : {
         type : Number
     },
-    Category : [{
+    Category :{
         type : String
-    }]
+    }
 });
 
 module.exports = mongoose.model('Project',ProjectSchema);
