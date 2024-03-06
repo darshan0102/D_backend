@@ -18,4 +18,31 @@ exports.addUser = async (req,res) => {
         console.log(err);
         res.status(500).json({message : 'Internal Server Error...'});
     }
+};
+
+exports.getAllUsers = async(req, res) => {
+    try {
+        let users = await User.find();
+        res.status(201).json(users);
+    }
+    catch (error) {
+     console.log(error);
+     res.status(500).json({message : 'Internal Server Error...'});
 }
+};
+
+exports.getUser = async (req, res) => {
+    try {
+        let userId = req.query.userId;
+        let user = await User.findById(userId);
+        // let user = await user.findOne({ firstName: userId})
+        if (!user) {
+            return res.status(404).json({message :'User not found'});
+        }
+        res.status(200).json(user);
+       }
+       catch (error) {
+        console.log (error);
+        res.status(500).json({ message: 'Internal Server Error...'});
+       }
+};
