@@ -12,6 +12,10 @@ const ProjectSchema = mongoose.Schema({
     },
     Category :{
         type : String
+    },
+    isDelete: {
+        type: Boolean,
+        default: false
     }
 });
 
