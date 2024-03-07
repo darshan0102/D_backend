@@ -63,7 +63,6 @@ exports.updateProduct = async(req, res) => {
         res.status(500).json({ message: 'Internal Server Error...'});
     }
 };
-
 exports.deleteProduct = async (req, res) => {
     try {
         let projectId = req.query.projectId;
