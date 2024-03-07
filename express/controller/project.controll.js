@@ -45,8 +45,6 @@ exports.getProject = async (req, res) => {
         res.status(500).json({ message: `Internal Server Error... ${error.message}` });
        }
 };
-
-
 exports.updateProduct = async(req, res) => {
     try {
         let projectId = req.query.projectId;
