@@ -6,4 +6,4 @@ userRoutes.post('/add-user', addUser);
 userRoutes.get('/get-all-users', getAllUsers);
 userRoutes.get('/get-user', getUser);
 
-module.exports = userRoutes;
+module.exports = userRoutes; 
