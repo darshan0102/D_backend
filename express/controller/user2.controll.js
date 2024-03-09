@@ -2,9 +2,6 @@ const User = require('../model/user2.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
-
-
 exports.addUser = async (req,res) => {
     try{
         const {firstName, lastName, gender, email, password, age} = req.body;
