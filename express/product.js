@@ -22,5 +22,3 @@ app.use('/Project',ProjectRoutes)
 app.listen(port,() => {
     console.log(`Server Start At http://localhost:8000`);
 }); 
-
-
