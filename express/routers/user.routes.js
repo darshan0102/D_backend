@@ -12,7 +12,7 @@ userRoutes.post('/login-user',loginUser);
 // userRoutes.get('/get-all-users', getAllUsers);       
 // userRoutes.get('/get-user', getUser);
 
-module.exports = UserRoutes;    
+module.exports = userRoutes;    
 
 
 

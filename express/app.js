@@ -26,8 +26,8 @@ app.use(morgan('dev'));
 // app.use('/users',userRoutes)
 
 // User Server (mongoosh)
-const userRoutes = require('./Routers/users.routes');
-const productRoutes = require('./Routers/product.routes');
+const userRoutes = require('./routers/user.routes');
+const productRoutes = require('./routers/product.routes');
 const cartRoutes = require('./routers/cart.routes');
 const orderRoutes = require('./routers/order.routes');
 app.use('/api/user',userRoutes);

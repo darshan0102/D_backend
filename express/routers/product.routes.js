@@ -1,12 +1,21 @@
 const express = require('express');
-const ProjectRoutes = express.Router();
+const productRoutes = express.Router();
+const { verifyToken} = require('../Helpers/verifyToken');
+const { addProducts,
+        getAllProducts,
+        getProduct,
+        updateProduct,
+        deleteProduct
+} = require('../controller/product.controll');
 
-const {addProject, getAllProject, getProject, updateProduct, deleteProduct} = require('../controller/product.controll');
+productRoutes.post('/add-product', addProducts);
 
-ProjectRoutes.post('/add-Product', addProject);
-ProjectRoutes.get('/get-all-Product', getAllProject);
-ProjectRoutes.get('/get-Product', getProject);
-ProjectRoutes.put('/put-Product', updateProduct); 
-ProjectRoutes.delete('/delete-Product', deleteProduct); ;
+productRoutes.get('/getAll-product',verifyToken, getAllProducts);
 
-module.exports = ProductRoutes;
+productRoutes.get('/get-product',verifyToken, getProduct);
+
+productRoutes.put('/update-product',verifyToken, updateProduct);
+
+productRoutes.delete('/delete-product',verifyToken, deleteProduct);
+
+module.exports = productRoutes;  
