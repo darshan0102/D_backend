@@ -1,53 +1,36 @@
 const express = require('express');
 const userRoutes = express.Router();
-const {registerUser,
-       loginUser, 
-       addUser,
-       getAllUsers,
-       getUser} = require('../controller/user.controll');
+const { verifyToken } = require('../helpers/verifyToken');
 
-userRoutes.post('/register-user',registerUser);
-userRoutes.post('/login-user',loginUser);
-// userRoutes.post('/add-user', addUser);
-// userRoutes.get('/get-all-users', getAllUsers);       
-// userRoutes.get('/get-user', getUser);
+const { 
+        // addUsers,
+        registerUser,
+        loginUser, 
+        getAllUsers, 
+        getUser, 
+        updateUser, 
+        deleteUser,
+        changePassword,
+        addNewUser
+} = require('../controller/user.controll');
+// const { upload } = require('../helpers/imageUpload');
 
-module.exports = userRoutes;    
+// userRoutes.post('/add-user', addUsers);
 
+userRoutes.post('/register-user', registerUser);
 
+userRoutes.post('/login-user', loginUser);
 
+userRoutes.get('/getAll-users',verifyToken, getAllUsers);
 
+userRoutes.get('/get-users',verifyToken, getUser);
 
+userRoutes.put('/update-user',verifyToken, updateUser);
 
+userRoutes.delete('/delete-user',verifyToken, deleteUser);
 
+userRoutes.put('/change-password',verifyToken, changePassword);
 
+// userRoutes.post('/add-user', upload.single('profileImage'), addNewUser);
 
-// const express = require('express');
-// const usersRoutes = express.Router();
-// const {addUsers, 
-//     getAllUsers,
-//     getUsers, 
-//     replaceUsers, 
-//     updateUsers, 
-//     deleteUsers
-// } = require('../controller/user.controll');
-
-// // Create Users
-// usersRoutes.post('/',addUsers);
-
-// // Get All Users
-// usersRoutes.get('/',getAllUsers);
-
-// // Get Specific User
-// usersRoutes.get('/single-user',getUsers);
-
-// // Replace Specific User
-// usersRoutes.put('/replace-user',replaceUsers);
-
-// // Update Specific User
-// usersRoutes.patch('/update-user',updateUsers);
-
-// // Delete Specific User
-// usersRoutes.delete('/delete-user',deleteUsers);
-
-// module.exports = usersRoutes;
+module.exports = userRoutes;
