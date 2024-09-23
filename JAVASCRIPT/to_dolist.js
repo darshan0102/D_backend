@@ -64,7 +64,7 @@ function addItem(e) {
 	li.appendChild(editButton);
 
 	items.appendChild(li);
-}
+}  
 
 function removeItem(e) {
 	e.preventDefault();
